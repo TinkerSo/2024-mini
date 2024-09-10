@@ -25,24 +25,25 @@ def quiet():
     speaker.duty_u16(0)
 
 #frequencies for the notes round up to the nearest 
-F_SHARP = 370
-G = 392
-Rest = 0
+note = {"F#":370, 
+         "G":392,
+         "Rest":0}
 
-#define the "Not Like Us" melody
-melody = [
-    (F_SHARP, 0.25),  
-    (F_SHARP, 0.25),  
-    (G, 0.25),        
-    (F_SHARP, 0.25),  
+
+#"Not Like Us" melody definition 
+not_like_us_melody = [
+    note["F#"],
+    note["F#"],
+    note["G"],
+    note["F#"],
 ]
 
-# Play the melody
+# Play "not like us"
 print("Playing the sequence: F# F# G F#")
 for i in range(3):
-    for note, duration in melody:
+    for note in not_like_us_melody:
         print(f"Playing frequency: {note} Hz")
-        playtone(note, duration)
+        playtone(note, 0.5)
         quiet()
         utime.sleep(0.1)  
     quiet()
