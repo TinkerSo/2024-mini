@@ -24,16 +24,29 @@ def playtone(frequency: float, duration: float) -> None:
 def quiet():
     speaker.duty_u16(0)
 
+#frequencies for the notes round up to the nearest 
+F_SHARP = 370
+G = 392
+Rest = 0
 
-freq: float = 30
-duration: float = 0.1  # seconds
+#define the "Not Like Us" melody
+melody = [
+    (F_SHARP, 0.25),  
+    (F_SHARP, 0.25),  
+    (G, 0.25),        
+    (F_SHARP, 0.25),  
+]
 
-print("Playing frequency (Hz):")
-
-for i in range(64):
-    print(freq)
-    playtone(freq, duration)
-    freq = int(freq * 1.1)
-
+# Play the melody
+print("Playing the sequence: F# F# G F#")
+for i in range(3):
+    for note, duration in melody:
+        print(f"Playing frequency: {note} Hz")
+        playtone(note, duration)
+        quiet()
+        utime.sleep(0.1)  
+    quiet()
+    utime.sleep(1)  
+    
 # Turn off the PWM
 quiet()
