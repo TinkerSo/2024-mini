@@ -28,3 +28,12 @@ Experiment using exercise_light.py to find approximate max_bright and min_bright
 
 Pico MicroPython time.sleep() doesn't error for negative values even though such are obviously incorrect--it is undefined for a system to sleep for negative time.
 Duty cycle greater than 1 is undefined, so we clip the duty cycle to the range [0, 1].
+
+## Our Solution
+
+1) The "max_bright" value we found were about 550 - 600. This was accomplished by putting a phone light directly on top of the photoresistor.
+   
+The "min_bright" values we found were 50000 - 51000. 
+
+![ezgif com-optimize (2)](https://github.com/user-attachments/assets/fb768809-1583-42fd-b7ed-fe8caf5f0542)
+
