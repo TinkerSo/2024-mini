@@ -19,3 +19,5 @@ For the question below, feel free to use musical scale of your choice!
 ## Questions
 
 1. Using the code in exercise_sound.py as a starting point, modify the code to play several notes in a sequence from a song of your choosing.
+## Solution
+1. Referencing [frequency to notes chart](https://muted.io/note-frequencies/) we defined each note as key and its values as frequency in a dictionary. Then, we search up from the song "Not Like Us" by kendrick Lamar and convert the melody into a list of notes. 
