@@ -22,4 +22,4 @@ For the question below, feel free to use musical scale of your choice!
 ## Solution
 1. Referencing [frequency to notes chart](https://muted.io/note-frequencies/) we defined each note as key and its values as frequency in a dictionary. Then, we search up from the song "Not Like Us" by kendrick Lamar and convert the melody into a list of notes.
 
-   ###[Demo Video](https://drive.google.com/file/d/1n-NT6gc6mlYI_GhmT9WiNHLh_GMzf1pI/view?usp=sharing)
+### [Demo Video](https://drive.google.com/file/d/1n-NT6gc6mlYI_GhmT9WiNHLh_GMzf1pI/view?usp=sharing)
