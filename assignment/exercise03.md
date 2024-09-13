@@ -9,3 +9,4 @@ The exercise_game.py script measures response time.
 2. Upload the response time data to a cloud service of your choice.
 
 The response to these questions is your unique code and results in Report.md in your team's forked GitHub repository.
+<img width="1357" alt="Screenshot 2024-09-13 at 5 02 57 PM" src="https://github.com/user-attachments/assets/f912fd9f-5504-4ae8-854d-843d92def77c">
