@@ -35,5 +35,7 @@ Duty cycle greater than 1 is undefined, so we clip the duty cycle to the range [
    
 The "min_bright" values we found were 50000 - 51000. 
 
+Some design consideration we took into account was the orientation of the photoresistor. We bent it upwards to allow for more ambient light to be detected which is more characteristic of the rooms actual light. Additionally, we had to be cautious about the leads of the photoresistor and the LED do not intersect as we did a minimalist approch by attaching them directly to the rpi pico rather than a bread board. 
+
 ![ezgif com-optimize (2)](https://github.com/user-attachments/assets/fb768809-1583-42fd-b7ed-fe8caf5f0542)
 
