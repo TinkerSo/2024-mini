@@ -9,7 +9,7 @@ The exercise_game.py script measures response time.
 2. Upload the response time data to a cloud service of your choice.
 
 
-##Solution
+## Solution
 1. We used the native built in math functions min and max to take the min and max of the list of scores. Additionally, we used the values of N and the native sum function to ultimately calculate the mean and the score. We then saved these values to a json file prepared to for part 2.
 
 2. We used Google Firebase to host our server and store our json file. We interefaced with the Firebase through the Rest API by first connecting to the BU guest wifi. We used the BU guest wifi so we did not have to put our BU kerberos password within the GitHub while still having access to the cloud. 
