@@ -20,3 +20,4 @@ The exercise_game.py script measures response time.
 
 The response to these questions is your unique code and results in Report.md in your team's forked GitHub repository.
 <img width="1507" alt="Screenshot 2024-09-13 at 5 21 52 PM" src="https://github.com/user-attachments/assets/1c5b97fc-ef11-40eb-b5b6-09692982e384">
+<img width="577" alt="Screenshot 2024-09-13 at 5 53 30 PM" src="https://github.com/user-attachments/assets/58aa3c38-5a31-462a-989e-8de0a560c7fa">
