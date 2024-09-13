@@ -1,22 +1,39 @@
-"""
-Response time - single-threaded
-"""
-
+import urequests as requests
 from machine import Pin
+import network
 import time
 import random
 import json
+import network
+import time
 
-
-N: int = 3
+N: int = 10
 sample_ms = 10.0
 on_ms = 500
 
+#firebase realtime database URL 
+firebase_url = "https://miniporject-3ba87-default-rtdb.firebaseio.com/scores"
+
+#connect to BU guest Wifi
+def connect_to_wifi(ssid):
+    wlan = network.WLAN(network.STA_IF)
+    wlan.active(True)
+    
+    wlan.connect(ssid)
+
+    while not wlan.isconnected():
+        print("attempting to connect to WiFi")
+        time.sleep(1)
+    
+    print("connected to WiFi")
+    print(f"IP Address: {wlan.ifconfig()[0]}")
+
+ssid = 'BU Guest (unencrypted)'
+connect_to_wifi(ssid)
 
 def random_time_interval(tmin: float, tmax: float) -> float:
-    """return a random time interval between max and min"""
+    """Return a random time interval between max and min"""
     return random.uniform(tmin, tmax)
-
 
 def blinker(N: int, led: Pin) -> None:
     # %% let user know game started / is over
@@ -26,7 +43,6 @@ def blinker(N: int, led: Pin) -> None:
         time.sleep(0.1)
         led.low()
         time.sleep(0.1)
-
 
 def write_json(json_filename: str, data: dict) -> None:
     """Writes data to a JSON file.
@@ -44,47 +60,52 @@ def write_json(json_filename: str, data: dict) -> None:
     with open(json_filename, "w") as f:
         json.dump(data, f)
 
-
-def scorer(t: list[int | None]) -> None:
+def scorer(t: list[int | None]) -> dict:
     # %% collate results
     misses = t.count(None)
     print(f"You missed the light {misses} / {len(t)} times")
 
     t_good = [x for x in t if x is not None]
 
-    print(t_good)
-
-    # add key, value to this dict to store the minimum, maximum, average response time
-    # and score (non-misses / total flashes) i.e. the score a floating point number
-    # is in range [0..1]
-    #print(t)
+    #compute average, minimum, maximum response time
     min_val = min(t_good)
     max_val = max(t_good)
     mean_val = sum(t_good)/N
     score = (len(t_good))/N
 
-    print("min: ", min_val, "max: ", max_val, "mean: ", mean_val, "score: ", score)
-    data = {"min": min_val, "max": max_val,"mean":mean_val, "score": score}
+    print("min:", min_val, "max:", max_val, "mean:", mean_val, "score:", score)
 
-    # %% make dynamic filename and write JSON
+    data = {
+        "min": min_val,
+        "max": max_val,
+        "mean": mean_val,
+        "score": score
+    }
+    return data
 
-    now: tuple[int] = time.localtime()
-
-    now_str = "-".join(map(str, now[:3])) + "T" + "_".join(map(str, now[3:6]))
-    filename = f"score-{now_str}.json"
-
-    print("write", filename)
-
-    write_json(filename, data)
-
+def upload_to_firebase(user: str, data: dict) -> None:
+    # using "if __name__" allows us to reuse functions in other script files
+    headers = {
+        'Content-Type': 'application/json',
+    }
+    
+    #store in json file 
+    entry_url = f"{firebase_url}/{user}.json"
+    
+    #request to update data 
+    response = requests.put(entry_url, json=data, headers=headers)
+    
+    if response.status_code == 200:
+        print(f"Data successfully uploaded: {user}")
+    else:
+        print(f"Failed to upload data: {response.status_code}, Response: {response.text}")
 
 if __name__ == "__main__":
     # using "if __name__" allows us to reuse functions in other script files
-
     led = Pin("LED", Pin.OUT)
     button = Pin(16, Pin.IN, Pin.PULL_UP)
 
-    t: list[int | None] = []
+    t = []
 
     blinker(3, led)
 
@@ -106,4 +127,10 @@ if __name__ == "__main__":
 
     blinker(5, led)
 
-    scorer(t)
+    data = scorer(t)
+
+    current_time = time.localtime()  #get the local time (year, month, day, hour, minute, second)
+    user = "user_" + "_".join(map(str, current_time[:6]))  #create a user ID from date and time
+    
+    upload_to_firebase(user, data)
+
