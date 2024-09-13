@@ -14,5 +14,9 @@ The exercise_game.py script measures response time.
 
 2. We used Google Firebase to host our server and store our json file. We interefaced with the Firebase through the Rest API by first connecting to the BU guest wifi. We used the BU guest wifi so we did not have to put our BU kerberos password within the GitHub while still having access to the cloud. 
 
+3. Create a project and real database in Firebase. Enable the firebase API and modify the code to upload the json file to the realtime database URL.
+
+4. In order to determine different games, we keep track the day and time as a json file name. 
+
 The response to these questions is your unique code and results in Report.md in your team's forked GitHub repository.
 <img width="1507" alt="Screenshot 2024-09-13 at 5 21 52 PM" src="https://github.com/user-attachments/assets/1c5b97fc-ef11-40eb-b5b6-09692982e384">
