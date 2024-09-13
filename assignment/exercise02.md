@@ -22,4 +22,8 @@ For the question below, feel free to use musical scale of your choice!
 ## Solution
 1. Referencing [frequency to notes chart](https://muted.io/note-frequencies/) we defined each note as key and its values as frequency in a dictionary. Then, we search up from the song "Not Like Us" by kendrick Lamar and convert the melody into a list of notes.
 
+Additionally, we played each note for about 0.5 seconds and longer notes we added them twice to the list of notes. We play all the notes through a for loop for 3 times to demonstrate the backing track of "Not Like Us" sufficiently. 
+
+Before playing any of the notes, we also jsut tested if a single frequency worked, utilizing the integration testing methodology. After we verified a single note worked, we tested thte range of notes and verified pico and the speaker was capable of outputting various frequencies. We then verified the song through the speaker and outputting the target note in the output logs. 
+
 ### [Demo Video](https://drive.google.com/file/d/1n-NT6gc6mlYI_GhmT9WiNHLh_GMzf1pI/view?usp=sharing)
