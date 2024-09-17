@@ -1,4 +1,4 @@
-Teammate's Name: Lang Gui, Christian So
+## Teammate's Name: Lang Gui, Christian So
 
 # Excercise 1
 1) The "max_bright" value we found were about 550 - 600. This was accomplished by putting a phone light directly on top of the photoresistor.
