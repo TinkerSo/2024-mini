@@ -8,6 +8,8 @@ The exercise_game.py script measures response time.
 1. Edit the exercise_game.py code to compute average, minimum, maximum response time for 10 flashes total.
 2. Upload the response time data to a cloud service of your choice.
 
+## User-Story
+The game that is implemented on the RPi Pico tests the user's reaction speed and scores them. The game starts by three flashes on the Pico. After that, every time the LED flashes, the user must press the button as fast as they can. The user only has 500ms to react or it will be considered a miss. If you press the button within 500ms, the time it took you to press the button. You will have 10 attempts, which means the LED will flash 10 times. Your score is calculated by a percentage of how many times out of the 10 times you did not miss to press. The goal of the game is to generate the lowest average possible and highest percentage score.
 
 ## Solution
 1. We used the native built in math functions min and max to take the min and max of the list of scores. Additionally, we used the values of N and the native sum function to ultimately calculate the mean and the score. We then saved these values to a json file prepared to for part 2.
