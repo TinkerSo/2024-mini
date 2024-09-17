@@ -26,4 +26,4 @@ The game that is implemented on the RPi Pico tests the user's reaction speed and
 ### An image of the values in the json file directly from teh pico in the logs
 <img width="577" alt="Screenshot 2024-09-13 at 5 53 30 PM" src="https://github.com/user-attachments/assets/58aa3c38-5a31-462a-989e-8de0a560c7fa">
 
-## (Demo Video)[https://drive.google.com/file/d/1mXKVypnZKJxnBAjuwhKc_toemvPJ2VOq/view?usp=sharing]
+## [Demo Video](https://drive.google.com/file/d/1mXKVypnZKJxnBAjuwhKc_toemvPJ2VOq/view?usp=sharing)
