@@ -23,7 +23,7 @@ The game that is implemented on the RPi Pico tests the user's reaction speed and
 ### An image of the json data in the firebase see through the browser
 <img width="1507" alt="Screenshot 2024-09-13 at 5 21 52 PM" src="https://github.com/user-attachments/assets/1c5b97fc-ef11-40eb-b5b6-09692982e384">
 
-### An image of the values in the json file directly from teh pico in the logs
+### An image of the values in the json file directly from the pico in the logs
 <img width="577" alt="Screenshot 2024-09-13 at 5 53 30 PM" src="https://github.com/user-attachments/assets/58aa3c38-5a31-462a-989e-8de0a560c7fa">
 
 ## [Demo Video](https://drive.google.com/file/d/1mXKVypnZKJxnBAjuwhKc_toemvPJ2VOq/view?usp=sharing)
